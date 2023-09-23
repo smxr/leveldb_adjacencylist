@@ -1,10 +1,3 @@
-/*
- * context.h
- *
- *  Created on: Jan 16, 2021
- *      Author: teng
- */
-
 #ifndef SRC_UTIL_CONTEXT_H_
 #define SRC_UTIL_CONTEXT_H_
 

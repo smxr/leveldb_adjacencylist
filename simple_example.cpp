@@ -291,20 +291,20 @@ int main(int argc, char **argv) {
   }
   delete lock;
 
-  //  Iterator* it = db->NewIterator(ReadOptions());
-  //  for (it->SeekToFirst(); it->Valid(); it->Next()) {
-  //    int key = atoi(it->key().ToString().c_str());
-  //    cout << it->key().ToString() << ": ";
-  //    for(int i=0;i<neighbor_count[key];i++){
-  //      string string_node = it->value().ToString().substr(i*sizeof(adjacency_node),sizeof(adjacency_node));       //48 ,pack doesn't change .size
-  //      std::unique_ptr<adjacency_node> this_node = Unpack<adjacency_node>(string_node);
-  //      this_node->print();
-  //      cout<<" ; ";
-  //    }
-  //    cout<<endl;
-  //  }
-  //  assert(it->status().ok()); // Check for any errors found during the scan
-  //  delete it;
+    Iterator* it = db->NewIterator(ReadOptions());
+    for (it->SeekToFirst(); it->Valid(); it->Next()) {
+      int key = atoi(it->key().ToString().c_str());
+      cout << it->key().ToString() << ": ";
+      for(int i=0;i<neighbor_count[key];i++){
+        string string_node = it->value().ToString().substr(i*sizeof(adjacency_node),sizeof(adjacency_node));       //48 ,pack doesn't change .size
+        std::unique_ptr<adjacency_node> this_node = Unpack<adjacency_node>(string_node);
+        this_node->print();
+        cout<<" ; ";
+      }
+      cout<<endl;
+    }
+    assert(it->status().ok()); // Check for any errors found during the scan
+    delete it;
   delete neighbor_count;
 
 

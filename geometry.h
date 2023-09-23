@@ -1,12 +1,3 @@
-/*
- * geometry.h
- * included the most commonly accessed data structures
- *
- *  Created on: Jan 11, 2021
- *      Author: teng
- */
-
-
 #include <stdlib.h>
 #include <stdio.h>
 #include <vector>
