@@ -5,7 +5,7 @@
 #include <string>
 #include <queue>
 #include <iostream>
-#include <utility>      // pair
+#include <utility>
 
 using namespace std;
 
